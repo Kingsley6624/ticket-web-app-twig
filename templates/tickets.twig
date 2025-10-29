@@ -1,0 +1,58 @@
+{# templates/tickets.twig #}
+{% extends "base.twig" %}
+{% block title %}Tickets - Ticket Manager{% endblock %}
+
+{% block content %}
+<div class="page container" role="main" aria-labelledby="ticketsHeading">
+  <header class="tickets-header">
+    <h1 id="ticketsHeading">Ticket Management</h1>
+    <div class="header-actions">
+      <a href="?page=dashboard" class="btn-primary">Dashboard</a>
+      <button id="logoutBtn" class="btn-secondary" aria-label="Logout">Logout</button>
+    </div>
+  </header>
+
+  <!-- Create / Edit Ticket Form -->
+  <section class="ticket-form-card" aria-labelledby="formHeading">
+    <h2 id="formHeading">Create / Edit Ticket</h2>
+
+    <form id="ticketForm" novalidate>
+      <input type="hidden" id="ticketId" value="" />
+
+      <label for="title">Title <span aria-hidden="true">*</span></label>
+      <input id="title" name="title" class="input-field" required aria-required="true" />
+      <div id="titleError" class="error" aria-live="polite"></div>
+
+      <label for="status">Status <span aria-hidden="true">*</span></label>
+      <select id="status" name="status" class="input-field" required aria-required="true">
+        <option value="">Select status</option>
+        <option value="open">open</option>
+        <option value="in_progress">in_progress</option>
+        <option value="closed">closed</option>
+      </select>
+      <div id="statusError" class="error" aria-live="polite"></div>
+
+      <label for="priority">Priority (optional)</label>
+      <select id="priority" name="priority" class="input-field">
+        <option value="">normal</option>
+        <option value="low">low</option>
+        <option value="high">high</option>
+      </select>
+      <div id="priorityError" class="error" aria-live="polite"></div>
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="4" class="input-field"></textarea>
+      <div class="form-actions">
+        <button type="submit" id="submitBtn" class="btn-primary">Create Ticket</button>
+        <button type="button" id="cancelEditBtn" class="btn-secondary" hidden>Cancel</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Tickets List -->
+  <section class="ticket-list" id="ticketList" aria-label="Tickets list"></section>
+
+  <!-- Toast container -->
+  <div id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+</div>
+{% endblock %}

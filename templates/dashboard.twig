@@ -1,0 +1,35 @@
+{# templates/dashboard.twig #}
+{% extends "base.twig" %}
+{% block title %}Dashboard - Ticket Manager{% endblock %}
+
+{% block content %}
+<div class="page container" role="main" aria-labelledby="dashboardHeading">
+  <header class="dashboard-header">
+    <h1 id="dashboardHeading">Dashboard</h1>
+    <div class="header-actions">
+  <a href="?page=tickets" class="btn-primary" id="manageTicketsLink">Manage Tickets</a>
+  <button id="logoutBtn" class="btn-secondary" aria-label="Logout">Logout</button>
+</div>
+
+  </header>
+
+  <section class="stats" aria-label="Ticket summary">
+    <div class="stat-card" role="region" aria-labelledby="statTotal">
+      <h4 id="statTotal">Total</h4>
+      <p class="stat-number" id="totalTickets">0</p>
+    </div>
+
+    <div class="stat-card" role="region" aria-labelledby="statOpen">
+      <h4 id="statOpen">Open</h4>
+      <p class="stat-number" id="openTickets">0</p>
+    </div>
+
+    <div class="stat-card" role="region" aria-labelledby="statResolved">
+      <h4 id="statResolved">Resolved</h4>
+      <p class="stat-number" id="closedTickets">0</p>
+    </div>
+  </section>
+
+  <div id="dashboardToastContainer" aria-live="polite" aria-atomic="true"></div>
+</div>
+{% endblock %}

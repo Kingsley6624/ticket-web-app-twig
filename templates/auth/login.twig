@@ -1,0 +1,32 @@
+{% extends "base.twig" %}
+{% block title %}Login - Ticket Manager{% endblock %}
+
+{% block content %}
+<section class="auth-container">
+  <div class="auth-box">
+   
+
+    <h2>Welcome Back 👋</h2>
+    <p>Login to access your dashboard.</p>
+
+    <form id="loginForm" class="auth-form">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your email" required />
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter your password" required />
+      </div>
+
+      <button type="submit" class="btn-primary full-width">Login</button>
+    </form>
+
+    <p class="alt-link">
+      Don’t have an account?
+      <a href="?page=auth/signup">Create one</a>
+    </p>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+{% block title %}Welcome to Ticket Manager{% endblock %}
+
+{% block content %}
+<header class="hero">
+  <!-- Circle with logo -->
+  <div class="circle-deco">
+    <img src="/assets/ticket-logo-.003.jpg" alt="Ticket Manager Logo" class="logo-img" />
+  </div>
+
+  <div class="hero-text">
+    <h1>Ticket Manager</h1>
+    <p>Manage your tickets efficiently with ease.</p>
+    <div class="cta-buttons">
+      <a href="?page=auth/login" class="btn-primary">Login</a>
+      <a href="?page=auth/signup" class="btn-primary">Get Started</a>
+    </div>
+  </div>
+
+  <svg class="wave" viewBox="0 0 1440 320">
+    <path fill="#fff" fill-opacity="1" d="M0,128L1440,288L1440,320L0,320Z"></path>
+  </svg>
+</header>
+
+<section class="features">
+  <div class="feature-box">📋 Track Tickets</div>
+  <div class="feature-box">⚡ Quick Updates</div>
+  <div class="feature-box">📊 Insightful Stats</div>
+</section>
+{% endblock %}
